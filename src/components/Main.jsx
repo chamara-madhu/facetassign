@@ -1,52 +1,27 @@
 import React, { useState, useEffect } from "react";
 
-import { categories } from "../assets/data/data_set";
-
 import Content from "./Content";
 import PlusMinus from "./common/PlusMinus";
-
-import { checkChildProducts } from "../functions/filteringFunc";
 import CheckBoxComp from "./common/CheckBoxComp";
 import SelectAllComp from "./common/SelectAllComp";
+
+import { categories } from "../assets/data/data_set";
+import { isShowFunc, checkChildProducts } from "../functions/filteringFunc";
+import { addIsCheckedIsShow } from "../functions/addIsCheckedIsShow";
 
 function Comp() {
   const [data, setData] = useState(categories);
 
   useEffect(() => {
-    setData(addIsChecked(categories));
+    setData(addIsCheckedIsShow(categories));
   }, []);
 
-  const addIsChecked = (data) => {
-    const arr = [];
-
-    data.forEach((el) => {
-      el.isChecked = false;
-      el.isShow = false;
-
-      arr.push(el);
-    });
-
-    return arr;
-  };
-
+  // handles toggle child element
   const handleShowHide = (id) => {
-    const filteredData = data.filter((el) => {
-      if (el.id === id) {
-        if (el.isShow) {
-          el.isShow = false;
-          return el;
-        } else {
-          el.isShow = true;
-          return el;
-        }
-      } else {
-        return el;
-      }
-    });
-
-    setData(filteredData);
+    setData(isShowFunc(data, id));
   };
 
+  // handle checked
   const handleChecked = (id) => {
     const filteredData = data.filter((el) => {
       if (el.id === id) {
@@ -112,6 +87,7 @@ function Comp() {
     setData(filteredData);
   };
 
+  // handle select all
   const handleCheckedAllFollowers = (e, id) => {
     const filteredData = data.filter((el) => {
       if (el.id === id) {
