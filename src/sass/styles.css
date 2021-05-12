@@ -1,0 +1,234 @@
+.sidebar {
+  width: 380px;
+  position: fixed;
+  height: 100vh;
+  background: #fefcff;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 10px;
+  border-right: 1px solid #e5b4ff;
+  border-bottom: 1px solid #e5b4ff;
+}
+
+.sidebar div {
+  padding: 5px;
+}
+
+.sidebar .layers {
+  padding: 0 !important;
+}
+
+.sidebar .count {
+  font-size: 11px;
+  color: #6e0fa3;
+  vertical-align: text-top;
+  font-weight: 500;
+}
+
+.sidebar span {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.sidebar label {
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.sidebar .plus-minus {
+  display: inline-block;
+  width: 15px;
+  text-align: center;
+  vertical-align: unset !important;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid #be62f1;
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #be62f1;
+  border: 1px solid #be62f1;
+  color: #99a1a7;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "\2714";
+  font-size: 13px;
+  position: absolute;
+  left: 2px;
+  bottom: -1px;
+  color: #fff;
+}
+
+.font-weight-bold {
+  font-weight: 500;
+}
+
+.layers > div {
+  margin-left: 15px;
+}
+
+.d-none {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    position: unset;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.content-container {
+  width: calc(100% - 380px);
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content-container .content {
+  width: 100%;
+  padding: 20px;
+}
+
+.content-container .content .heading {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #6e0fa3;
+}
+
+.content-container .content .root-heading {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.content-container .content .second-heading {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.content-container .content .third-heading {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.content-container .content .forth-heading {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.content-container .content .fifth-heading {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.content-container .content .no-product-message {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #868686;
+}
+
+@media (max-width: 767px) {
+  .content-container {
+    width: 100%;
+  }
+}
+
+.prod-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.prod-container .product-card {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #f6e6ff;
+  color: #6e0fa3;
+  -ms-flex-preferred-size: 13.26%;
+      flex-basis: 13.26%;
+  height: 150px;
+  border-radius: 5px;
+  margin: 0 0.5% 1% 0.5%;
+  padding: 10px;
+}
+
+.prod-container .count {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  background: #be62f1;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 12px;
+  padding-top: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.prod-container .name {
+  position: absolute;
+  font-weight: 500;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .prod-container .product-card {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    margin: 0 1% 2% 1%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .prod-container .product-card {
+    -ms-flex-preferred-size: 31.33%;
+        flex-basis: 31.33%;
+    margin: 0 1% 2% 1%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .prod-container .product-card {
+    -ms-flex-preferred-size: 32.34%;
+        flex-basis: 32.34%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1224px) {
+  .prod-container .product-card {
+    -ms-flex-preferred-size: 19%;
+        flex-basis: 19%;
+  }
+}

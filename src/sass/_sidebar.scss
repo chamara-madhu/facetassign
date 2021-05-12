@@ -1,0 +1,92 @@
+.sidebar {
+  width: 380px;
+  position: fixed;
+  height: 100vh;
+  background: $sidebar-bg;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  border-right: 1px solid $sidebar-border-color;
+  border-bottom: 1px solid $sidebar-border-color;
+
+  div {
+    padding: 5px;
+  }
+
+  .layers {
+    padding: 0 !important;
+  }
+
+  .count {
+    font-size: 11px;
+    color: $pr-color-dark;
+    vertical-align: text-top;
+    font-weight: 500;
+  }
+
+  span {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  label {
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  .plus-minus {
+    display: inline-block;
+    width: 15px;
+    text-align: center;
+    vertical-align: unset !important;
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: $light-color;
+  border: 1px solid $pr-color;
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: $pr-color;
+  border: 1px solid $pr-color;
+  color: #99a1a7;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "\2714";
+  font-size: 13px;
+  position: absolute;
+  left: 2px;
+  bottom: -1px;
+  color: #fff;
+}
+
+.font-weight-bold {
+  font-weight: 500;
+}
+
+.layers > div {
+  margin-left: 15px;
+}
+
+.d-none {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    // display: none;
+    position: unset;
+    width: 100%;
+    height: auto;
+  }
+}
